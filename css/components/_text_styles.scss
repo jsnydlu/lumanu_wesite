@@ -1,0 +1,360 @@
+@use "../abstracts" as *;
+
+h1 {
+  font-family: $serif_font;
+  font-size: 2.625rem;
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--text_color);
+
+  @include lg {
+    font-size: (74/16) * 1rem;
+  }
+
+  //   &.large {
+  //     font-size: 2.875rem;
+
+  //     @include lg {
+  //       font-size: (74/16) * 1rem;
+  //     }
+  //   }
+}
+
+h2 {
+  font-family: $serif_font;
+  font-size: 2.125rem;
+  line-height: 1.1;
+  font-weight: 500;
+  color: var(--text_color);
+
+  @include lg {
+    font-size: (64/16) * 1rem;
+  }
+}
+
+h3 {
+  font-family: $serif_font;
+  font-size: 1.75rem;
+  line-height: 1.45;
+  font-weight: 500;
+  color: var(--text_color);
+
+  @include lg {
+    font-size: 2rem;
+  }
+
+  &.reg {
+    font-weight: 400;
+  }
+}
+
+h4 {
+  font-family: $sans_font;
+  font-size: (20/16) * 1rem;
+  line-height: 1.45;
+  font-weight: 600;
+  color: var(--text_color);
+
+  @include lg {
+    font-size: (24/16) * 1rem;
+  }
+
+  &.reg {
+    font-weight: 400;
+  }
+}
+
+h5 {
+  font-family: $sans_font;
+  font-size: 1rem;
+  line-height: 1.15;
+  font-weight: 500;
+  color: var(--text_color);
+
+  &.tag {
+    font-size: 0.875rem;
+  }
+
+  @include lg {
+    font-size: 1.25rem;
+    &.tag {
+      font-size: 1rem;
+    }
+  }
+}
+
+h6 {
+  font-family: $sans_font;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  font-weight: 500;
+  color: var(--text_color);
+}
+
+p {
+  font-family: $sans_font;
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 400;
+  color: var(--text_color);
+
+  @include lg {
+    font-size: 1.125rem;
+  }
+
+  //modifiers
+
+  //styles
+  &.bold,
+  strong,
+  .bold & {
+    font-weight: 600;
+  }
+
+  &.em,
+  em,
+  .em & {
+    font-style: italic;
+  }
+
+  &.sans,
+  .sans & {
+    font-family: $sans_font;
+    &.bold,
+    strong {
+      font-weight: 500;
+    }
+  }
+
+  //sizes
+  &.jumbo,
+  .jumbo & {
+    font-size: 1.5rem;
+
+    @include lg {
+      font-size: 2rem;
+    }
+  }
+
+  &.large,
+  .large & {
+    font-size: 1.1875rem;
+
+    @include lg {
+      font-size: 1.3125rem;
+    }
+  }
+
+  &.small,
+  .small & {
+    font-size: 0.875rem;
+
+    @include lg {
+      font-size: 0.9375rem;
+    }
+  }
+} //p
+
+p,
+figcaption {
+  a {
+    color: var(--text_color);
+    text-decoration: none;
+    position: relative;
+    white-space: nowrap;
+    display: inline-block;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      background: var(--accent);
+      bottom: 0.125em;
+      right: auto;
+      left: 0;
+      transition: 0.2s all;
+      height: 0.125em;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: var(--accent);
+      &::before {
+        width: 0;
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+}
+
+.label {
+  font-family: $sans_font;
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+figcaption {
+  --text_color: #{$color_grey-600};
+  font-size: 0.875rem;
+  font-family: $sans_font;
+  color: var(--text_color);
+  line-height: 1.7;
+  a {
+    --accent: #{$color_grey-800};
+  }
+}
+
+ul.bullets {
+  outline: 1px solid rgba(255, 0, 0, 0.1);
+  li {
+    display: flex;
+    margin-bottom: var(--sp-300);
+    p {
+      flex-grow: 1;
+    }
+    &::before {
+      display: block;
+      content: "•";
+      color: var(--text_color);
+      flex-grow: 0;
+      flex-shrink: 0;
+      padding: 0 var(--sp-300) 0 var(--sp-200);
+      font-size: 1rem;
+      line-height: 1.7;
+
+      @include lg {
+        font-size: 1.125rem;
+      }
+
+      .large & {
+        font-size: 1.1875rem;
+
+        @include lg {
+          font-size: 1.3125rem;
+        }
+      }
+
+      .small & {
+        font-size: 0.875rem;
+
+        @include lg {
+          font-size: 0.9375rem;
+        }
+      }
+    }
+  }
+
+  &.arrow {
+    li {
+      &::before {
+        content: "";
+        border-top: 0.5em solid transparent;
+        border-bottom: 0.5em solid transparent;
+        border-left: 0.5em solid var(--blue-500);
+        height: 0;
+        margin: 0.5em 0 0 0.5em;
+      }
+    }
+  }
+}
+
+//Color Utility Classes
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  @each $type in $colors_full {
+    &.#{nth($type, 1)} {
+      color: #{nth($type, 2)};
+    }
+  }
+  &.accent {
+    color: var(--accent);
+  }
+}
+
+.h1 {
+  font-family: $sans_font;
+  font-size: 2.625rem;
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: 0;
+
+  @include lg {
+    font-size: 3.5rem;
+  }
+
+  &.large {
+    font-size: 2.875rem;
+
+    @include lg {
+      font-size: 3.75rem;
+    }
+  }
+}
+
+.h2 {
+  font-family: $sans_font;
+  font-size: 2.125rem;
+  line-height: 1.1;
+  font-weight: 500;
+
+  @include lg {
+    font-size: 2.5rem;
+  }
+}
+
+.h3 {
+  font-family: $sans_font;
+  font-size: 1.75rem;
+  line-height: 1.45;
+  font-weight: 500;
+
+  @include lg {
+    font-size: 2rem;
+  }
+
+  &.reg {
+    font-weight: 400;
+  }
+}
+
+.h4 {
+  font-family: $sans_font;
+  font-size: 1.1875rem;
+  line-height: 1.45;
+  font-weight: 500;
+
+  @include lg {
+    font-size: 1.3125rem;
+  }
+
+  &.med {
+    font-weight: 500;
+  }
+}
+
+.h5 {
+  font-family: $sans_font;
+  font-size: 1rem;
+  line-height: 1.15;
+  font-weight: 500;
+
+  @include lg {
+    font-size: 1.25rem;
+  }
+}
+
+.h6 {
+  font-family: $sans_font;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  font-weight: 500;
+}

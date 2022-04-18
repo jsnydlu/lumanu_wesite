@@ -1,0 +1,71 @@
+#checkforrepeat {
+  --hello:repeated;
+}
+
+:root {
+  --white: white;
+  --grey-100: #f9f9f9;
+  --grey-200: #ebebeb;
+  --grey-300: #d9d9d9;
+  --grey-400: #c4c4c4;
+  --grey-600: #979797;
+  --grey-700: #767676;
+  --grey-800: #424242;
+  --grey-900: #231f20;
+  --black: black;
+  --blue-300: #0066ff;
+  --blue-500: #0052cc;
+  --blue-700: #174385;
+}
+
+.accent-white {
+  --accent:white;
+}
+
+.accent-grey-100 {
+  --accent:#f9f9f9;
+}
+
+.accent-grey-200 {
+  --accent:#ebebeb;
+}
+
+.accent-grey-300 {
+  --accent:#d9d9d9;
+}
+
+.accent-grey-400 {
+  --accent:#c4c4c4;
+}
+
+.accent-grey-600 {
+  --accent:#979797;
+}
+
+.accent-grey-700 {
+  --accent:#767676;
+}
+
+.accent-grey-800 {
+  --accent:#424242;
+}
+
+.accent-grey-900 {
+  --accent:#231f20;
+}
+
+.accent-black {
+  --accent:black;
+}
+
+.accent-blue-300 {
+  --accent:#0066ff;
+}
+
+.accent-blue-500 {
+  --accent:#0052cc;
+}
+
+.accent-blue-700 {
+  --accent:#174385;
+}

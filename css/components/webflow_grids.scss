@@ -1,0 +1,138 @@
+@use "../abstracts" as *;
+
+$main_columns: 12;
+$total_columns: $main_columns + 2;
+$core_grid_layout: var(--page_margin) 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+  1fr 1fr var(--page_margin);
+
+:root {
+  --main_columns: #{$main_columns};
+  --grid_layout: var(--page_margin) 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+    1fr var(--page_margin);
+
+  --gap: 2rem;
+  --page_margin: 5rem;
+
+  @include xs {
+    --page_margin: 1.25rem;
+    --gap: 0.75rem;
+  }
+
+  @include sm {
+    --page_margin: 1.875rem;
+    --gap: 1.25rem;
+  }
+
+  @include md {
+    --page_margin: 3.125rem;
+    --gap: 1.5rem;
+  }
+
+  @include lg {
+    --page_margin: 5.875rem;
+    --gap: 1.75rem;
+  }
+
+  @include xl {
+    --page_margin: calc((100vw - 78.25rem) / 2 - var(--gap));
+    --gap: 2.5rem;
+  }
+}
+
+main,
+footer,
+header,
+.core_grid {
+  display: grid;
+  grid-column-gap: var(--gap);
+  grid-template-columns: var(--grid_layout);
+}
+
+section {
+  grid-column: 1 /-1;
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: var(--grid_layout);
+  position: relative;
+  // set up column system classes - applies to .block elements
+  .block {
+    position: relative;
+    //default values - span across the main grid
+    // overide this prop to choose number of columns to extend across
+    --column_span: 12;
+    // overide this prop to choose start position if you don't want centered
+    --column_start: 2;
+    grid-column: var(--column_start) / span var(--column_span);
+
+    // default size
+    @for $i from 1 through 14 {
+      &.col-#{$i} {
+        --column_span: #{$i};
+        --column_start: #{round((14 - $i) / 2 + 1)};
+      }
+      &.start-#{$i} {
+        grid-column-start: $i + 1;
+      }
+    } //loop
+
+    @include xs {
+      @for $i from 1 through 14 {
+        &.col-sm-#{$i} {
+          --column_span: #{$i};
+          --column_start: #{round((14 - $i) / 2 + 1)};
+        }
+        &.start-sm-#{$i} {
+          grid-column-start: $i + 1;
+        }
+      } //loop
+    } //sm
+
+    @include sm {
+      @for $i from 1 through 14 {
+        &.col-sm-#{$i} {
+          --column_span: #{$i};
+          --column_start: #{round((14 - $i) / 2 + 1)};
+        }
+        &.start-sm-#{$i} {
+          grid-column-start: $i + 1;
+        }
+      } //loop
+    } //sm
+
+    @include md {
+      @for $i from 1 through 14 {
+        &.col-md-#{$i} {
+          --column_span: #{$i};
+          --column_start: #{round((14 - $i) / 2 + 1)};
+        }
+        &.start-md-#{$i} {
+          grid-column-start: $i + 1;
+        }
+      } //loop
+    } //md
+
+    @include lg {
+      @for $i from 1 through 14 {
+        &.col-lg-#{$i} {
+          --column_span: #{$i};
+          --column_start: #{round((14 - $i) / 2 + 1)};
+        }
+        &.start-lg-#{$i} {
+          grid-column-start: $i + 1;
+        }
+      } //loop
+    } //lg
+
+    @include xl {
+      @for $i from 1 through 14 {
+        &.col-xl-#{$i} {
+          --column_span: #{$i};
+          --column_start: #{round((14 - $i) / 2 + 1)};
+        }
+        &.start-xl-#{$i} {
+          grid-column-start: $i + 1;
+        }
+      } //loop
+    } //xl
+  } //> block
+}

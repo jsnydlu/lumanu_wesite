@@ -1,0 +1,201 @@
+@use "../abstracts" as *;
+
+$main_columns: 12;
+$total_columns: $main_columns + 2;
+
+:root {
+  --main_columns: #{$main_columns};
+
+  --sp-000: 0rem;
+  --sp-100: 0.5rem;
+  --sp-200: 0.75rem;
+  --sp-300: 1rem;
+  --sp-400: 1.5rem; //gutter
+  --sp-500: 2rem;
+  --sp-600: 2.5rem;
+  --sp-700: 3rem;
+  --sp-800: 3.75rem;
+  --sp-900: 5rem;
+
+  --gap: .875rem;
+  --page_margin: 1rem;
+
+  @include sm {
+    --page_margin: 1.25rem;
+    --gap: 1.25rem;
+  }
+
+  @include md {
+    --page_margin: 2rem;
+    --gap: 1.5rem;
+  }
+
+  @include lg {
+    --page_margin: 3.5rem;
+    --gap: 1.75rem;
+  }
+
+  @include xl {
+    --page_margin: 5rem;
+    --gap: 2rem;
+  }
+
+  @include xxl {
+    --page_margin: calc((100vw - 1320px) / 2 - var(--gap));
+  }
+}
+body{
+  --grid_layout: var(--page_margin) 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+  1fr var(--page_margin);
+}
+
+main,
+footer,
+header {
+
+  display: grid;
+  grid-column-gap: var(--gap);
+  grid-template-columns: var(--grid_layout);
+}
+
+article {
+  display: contents;
+  .entry-content {
+    display: contents;
+  }
+}
+section {
+  grid-column: 1 /-1;
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: var(--grid_layout);
+  position: relative;
+  // set up column system classes - applies to .block elements
+  .block {
+    //set to relative to keep absolute positioned background_area behind
+    position: relative;
+    //default values - span across the main grid
+    // overide this prop tochoose number of columns to extend across
+    --column_span: 12;
+    // overide this prop to choose start position if you don't want centered
+    --column_start: 2;
+
+    grid-column: var(--column_start) / span var(--column_span);
+
+    @for $i from 1 through 14 {
+      &.col-#{$i} {
+        --column_span: #{$i};
+        --column_start: #{round((14 - $i) / 2 + 1)};
+      }
+      &.start-#{$i} {
+        grid-column-start: $i + 1;
+      }
+    }//loop
+
+      @include sm {
+        @for $i from 1 through 14 {
+        &.col-sm-#{$i} {
+          --column_span: #{$i};
+          --column_start: #{round((14 - $i) / 2 + 1)};
+        }
+        &.start-sm-#{$i} {
+          grid-column-start: $i + 1;
+        }
+      }//loop
+      }//sm
+
+      @include md {
+        @for $i from 1 through 14 {
+        &.col-md-#{$i} {
+          --column_span: #{$i};
+          --column_start: #{round((14 - $i) / 2 + 1)};
+        }
+        &.start-md-#{$i} {
+          grid-column-start: $i + 1;
+        }
+      }//loo[
+      }//md
+
+      @include lg {
+        @for $i from 1 through 14 {
+        &.col-lg-#{$i} {
+          --column_span: #{$i};
+          --column_start: #{round((14 - $i) / 2 + 1)};
+        }
+        &.start-lg-#{$i} {
+          grid-column-start: $i + 1;
+        }
+      }//loop
+      }//lg
+
+      @include xl {
+        @for $i from 1 through 14 {
+        &.col-xl-#{$i} {
+          --column_span: #{$i};
+          --column_start: #{round((14 - $i) / 2 + 1)};
+        }
+        &.start-xl-#{$i} {
+          grid-column-start: $i + 1;
+        }
+      }//loop
+    }//xl
+  
+  } //> block
+
+//   //breaking out the styles to set differnet grid columns up for the block
+//   //similar looop to above but only 1-6. this is placed down here purely for legibility
+//   > .block {
+//     --items_per_row: 1;
+//     display: grid;
+//     gap: var(--gap);
+//     //default grid set up for even columns.
+//     //this can be overridden for individual blocks that use uneven columns
+//     grid-template-columns: repeat(var(--items_per_row), 1fr);
+
+//     @for $i from 1 through 6 {
+//       &.grid-#{$i} {
+//         --items_per_row: #{$i};
+//       }
+//       @include sm() {
+//         &.grid-sm-#{$i} {
+//           --items_per_row: #{$i};
+//         }
+//       }
+//       @include md() {
+//         &.grid-md-#{$i} {
+//           --items_per_row: #{$i};
+//         }
+//       }
+//       @include lg() {
+//         &.grid-lg-#{$i} {
+//           --items_per_row: #{$i};
+//         }
+//       }
+//       @include xl() {
+//         &.grid-xl-#{$i} {
+//           --items_per_row: #{$i};
+//         }
+//       }
+//     } //for loop column classes
+
+//     .full_width {
+//       grid-column: 1/-1;
+//     }
+//   } //grid_area
+// }
+
+// // Custom Padding (top and bottom)
+// @for $i from 0 through 9 {
+//   .padding-#{$i}00 {
+//     padding-top: var(--sp-#{$i}00);
+//     padding-bottom: var(--sp-#{$i}00);
+//   }
+// }
+
+// // Custom margin (top and bottom)
+// @for $i from 0 through 9 {
+//   .margin-#{$i}00 {
+//     margin-top: var(--sp-#{$i}00);
+//     margin-bottom: var(--sp-#{$i}00);
+//   }
+}

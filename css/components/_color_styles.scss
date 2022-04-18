@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+
+
+:root{
+    @each $type in $colors_full {
+      --#{nth($type, 1)}: #{nth($type, 2)};
+    }
+  }
+  
+  
+  //Color Utility Classes
+  
+    @each $type in $colors_full {
+      .accent-#{nth($type, 1)} {
+      --accent:#{nth($type, 2)};
+      }
+    }
+  
