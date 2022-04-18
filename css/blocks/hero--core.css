@@ -1,0 +1,66 @@
+#checkforrepeat {
+  --hello:repeated;
+}
+
+.hero--core {
+  min-height: 35rem;
+  padding: 5rem 0;
+}
+.hero--core .text_area {
+  grid-column: 2/span 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero--core .hero--core-image_area-inset.image_area.block {
+  grid-column: 9/span 4;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+.hero--core .hero--core-image_area-inset.image_area.block .content {
+  padding: calc(var(--gap) / 2);
+  position: relative;
+}
+.hero--core .hero_core-text_area {
+  gap: 2.625rem;
+}
+.hero--core .content.call_to_action-download_app {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.hero--core .text_to_download {
+  display: none;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .hero--core .text_to_download {
+    display: flex;
+  }
+}
+.hero--core .app_store {
+  display: flex;
+}
+@media (min-width: 768px) {
+  .hero--core .app_store {
+    display: none;
+  }
+}
+.hero--core .collage_items {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.hero--core .collage_items .bottom,
+.hero--core .collage_items .top {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero--core .parallax-container {
+  position: absolute;
+}

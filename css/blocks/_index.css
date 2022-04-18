@@ -1,0 +1,160 @@
+#checkforrepeat {
+  --hello: repeated;
+}
+
+.hero--core {
+  min-height: 35rem;
+  padding: 5rem 0;
+}
+.hero--core .text_area {
+  grid-column: 2/span 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero--core .hero--core-image_area-inset.image_area.block {
+  grid-column: 9/span 4;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+.hero--core .hero--core-image_area-inset.image_area.block .content {
+  padding: calc(var(--gap) / 2);
+  position: relative;
+}
+.hero--core .hero_core-text_area {
+  gap: 2.625rem;
+}
+.hero--core .content.call_to_action-download_app {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.hero--core .text_to_download {
+  display: none;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .hero--core .text_to_download {
+    display: flex;
+  }
+}
+.hero--core .app_store {
+  display: flex;
+}
+@media (min-width: 768px) {
+  .hero--core .app_store {
+    display: none;
+  }
+}
+.hero--core .collage_items {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.hero--core .collage_items .bottom,
+.hero--core .collage_items .top {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero--core .parallax-container {
+  position: absolute;
+}
+
+.content--features {
+  padding: 5rem 0;
+}
+.content--features .content_feature-text_area * {
+  text-align: center;
+}
+.content--features.has-background-black .background_area .fill {
+  background-color: black;
+}
+.content--features.has-background-black h1,
+.content--features.has-background-black h2,
+.content--features.has-background-black h3 {
+  color: white;
+}
+.content--features.has-background-black h4,
+.content--features.has-background-black h5,
+.content--features.has-background-black h6,
+.content--features.has-background-black p {
+  color: white;
+}
+.content--features > .text_area {
+  grid-column: 3/-3;
+}
+.content--features > .text_area .content {
+  padding: 0 0 2rem 0;
+}
+.content--features > .flex_area {
+  grid-column: 3/-3;
+}
+.content--features > .flex_area > .content {
+  display: flex;
+  gap: var(--gap);
+}
+.content--features > .flex_area > .content .feature_item {
+  gap: var(--gap);
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+}
+.content--features > .flex_area > .content .feature_item .text_area .content {
+  padding: 0 1.5rem;
+  gap: var(--sp-200);
+}
+.content--features > .flex_area > .content .feature_item .text_area .content * {
+  text-align: center;
+}
+
+.content--features {
+  padding: 5rem 0;
+}
+.content--features .content_feature-text_area * {
+  text-align: center;
+}
+.content--features.has-background-black .background_area .fill {
+  background-color: black;
+}
+.content--features.has-background-black h1,
+.content--features.has-background-black h2,
+.content--features.has-background-black h3 {
+  color: white;
+}
+.content--features.has-background-black h4,
+.content--features.has-background-black h5,
+.content--features.has-background-black h6,
+.content--features.has-background-black p {
+  color: white;
+}
+.content--features > .text_area {
+  grid-column: 3/-3;
+}
+.content--features > .text_area .content {
+  padding: 0 0 2rem 0;
+}
+.content--features > .flex_area {
+  grid-column: 3/-3;
+}
+.content--features > .flex_area > .content {
+  display: flex;
+  gap: var(--gap);
+}
+.content--features > .flex_area > .content .feature_item {
+  gap: var(--gap);
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+}
+.content--features > .flex_area > .content .feature_item .text_area .content {
+  padding: 0 1.5rem;
+  gap: var(--sp-200);
+}
+.content--features > .flex_area > .content .feature_item .text_area .content * {
+  text-align: center;
+}

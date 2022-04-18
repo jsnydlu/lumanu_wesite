@@ -1,0 +1,64 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+.content--features {
+  padding: (80/16) * 1rem 0;
+  .content_feature-text_area {
+    * {
+      text-align: center;
+    }
+  }
+  &.has-background-black {
+    .background_area {
+      .fill {
+        background-color: $color_black;
+      }
+    }
+    h1,
+    h2,
+    h3 {
+      color: $color_white;
+    }
+    h4,
+    h5,
+    h6,
+    p {
+      color: $color_white;
+    }
+  }
+  > .text_area {
+    grid-column: 3 / -3;
+    .content {
+      padding: 0 0 2rem 0;
+    }
+  }
+  > .flex_area {
+    grid-column: 3 / -3;
+
+    > .content {
+      display: flex;
+      gap: var(--gap);
+      .feature_item {
+        gap: var(--gap);
+        display: flex;
+        flex-direction: column;
+        width: 33%;
+        .image_area {
+          .content {
+            img {
+            }
+          }
+        }
+        .text_area {
+          .content {
+            padding: 0 1.5rem;
+            gap: var(--sp-200);
+            * {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
