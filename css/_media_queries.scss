@@ -1,0 +1,38 @@
+// media queries
+
+$xs-width: 478px;
+$sm-width: 768px;
+$md-width: 991px;
+//webflow base is between 991/1280
+$lg-width: 1280px;
+$xl-width: 1440px;
+
+@mixin xs {
+  @media (max-width: #{$xs-width}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: #{$sm-width}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: #{$md-width}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$lg-width}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$xl-width}) {
+    @content;
+  }
+}

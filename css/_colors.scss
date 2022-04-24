@@ -1,0 +1,94 @@
+@use "sass:color";
+
+#checkforrepeat {
+  --hello: repeated;
+}
+
+//colors
+$color_white: rgba(255, 255, 255, 1);
+$color_grey-100: rgba(249, 249, 249, 1);
+$color_grey-200: rgba(235, 235, 235, 1);
+$color_grey-300: rgba(217, 217, 217, 1);
+$color_grey-400: rgba(196, 196, 196, 1);
+$color_grey-500: #f9f9f9;
+$color_grey-600: rgba(151, 151, 151, 1);
+$color_grey-700: rgba(118, 118, 118, 1);
+$color_grey-800: rgba(66, 66, 66, 1);
+$color_grey-900: rgba(35, 31, 32, 1);
+$color_black: rgba(0, 0, 0, 1);
+
+$color_blue-300: rgba(0, 102, 255, 1);
+$color_blue-500: rgba(0, 82, 204, 1);
+$color_blue-700: rgba(23, 67, 133, 1);
+
+//green (primary brand)
+$electric_green: #b9fa3d;
+$forest_green: #176c1f;
+$tea_green: #e5ffb4;
+//purple
+$interface_purple: #6800ec;
+$interface_purple_dark: #4f00b2;
+$interface_purple_light: #d3bffc;
+//teal
+$electric_teal: #4fe9de;
+$dark_teal: #00857e;
+$light_mint: #ccf9f6;
+//fuschia
+$neon_fuschia: #f04ccb;
+$dark_fuschia: #c6109c;
+$blush_pink: #ffe3fa;
+//red
+$scarlet_red: #e32b39;
+$dark_scarlet: #bf000e;
+$peach_pink: #ffdcdf;
+//blue
+$ultraviolet: #3e74ff;
+$deep_ultraviolet: #042cb9;
+$cornflower_blue: #c6d6ff;
+//fog
+$dark_fog: #ece8ee;
+$fog_grey: #f4f0f7;
+
+//neutrals
+$black: #000000;
+$slate: #222221;
+$midnight_grey: #595959;
+$charcoal_grey: #808080;
+$medium_grey: #9b9da0;
+$light_grey: #b0b2b4;
+$warm_grey: #c3c1c3;
+$offwhite: #f6f6f6;
+$white: #ffffff;
+
+$colors_full: (
+  //name                   $main variable        $text color
+  "electric_green" $electric_green $black,
+  "forest_green" $forest_green $white,
+  "tea_green" $tea_green $black,
+  "interface_purple" $interface_purple $white,
+  "interface_purple_dark" $interface_purple_dark $white,
+  "interface_purple_light" $interface_purple_light $black,
+  "electric_teal" $electric_teal $black,
+  "dark_teal" $dark_teal $white,
+  "light_mint" $light_mint $black,
+  "neon_fuschia" $neon_fuschia $black,
+  "scarlet_red" $scarlet_red $white,
+  "dark_scarlet" $dark_scarlet $white,
+  "peach_pink" $peach_pink $black,
+  "ultraviolet" $ultraviolet $white,
+  "deep_ultraviolet" $deep_ultraviolet $white,
+  "cornflower_blue" $cornflower_blue $black,
+  "dark_fog" $dark_fog $black,
+  "fog_grey" $fog_grey $black,
+  "black" $black $white,
+  "slate" $slate $white,
+  "midnight_grey" $midnight_grey $white,
+  "charcoal_grey" $charcoal_grey $white,
+  "medium_grey" $medium_grey $black,
+  "light_grey" $light_grey $black,
+  "warm_grey" $warm_grey $black,
+  "offwhite" $offwhite $black,
+  "white" $white $black
+);
+
+// color.adjust($color_grey-100, $alpha:-.75);
